@@ -1,0 +1,29 @@
+
+%btn{
+    display: inline-block;
+    padding: 8px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    
+    &:hover{
+        transform: scale(.95);
+    }
+
+}
+
+.btn-primary {
+    @extend %btn;
+    background-color: $primary-color;
+    color: $tertiary-color;
+    border: $primary-color 2px solid;
+}
+
+.btn-secondary{
+    @extend %btn;
+    background-color: $tertiary-color;
+    color: $secondary-color;
+    border: $primary-color 2px solid;
+}
+  
+
+

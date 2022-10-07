@@ -1,0 +1,576 @@
+@import 'config';
+
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: $font-sizing;
+    scroll-behavior: smooth;
+
+}
+
+body{
+    font-family: $font-stack;
+    position: relative;
+    line-height: 1.6;
+    letter-spacing: 0.6px;
+    
+}
+
+img{
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+
+}
+
+.section{
+    padding: 6rem 0 2rem;
+}
+  
+
+// #About,
+// #Work,
+// #Contact{
+//     padding-top: 3rem;   
+// }
+
+
+.showcase{
+    background: $overlay-color;
+    height: 100vh;
+    position: relative;
+    
+
+    nav{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.6rem;
+        padding: .75rem 2rem;
+        position: -webkit-sticky;
+        position: sticky;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+       
+        
+        .nav-scale{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            transform: scale(1);
+            transition: transform 0.6s ease;
+            
+        }
+
+        
+
+        h1:hover{
+            transform: scale(.95);
+        }
+
+
+        ul{
+            display: flex;
+            list-style: none;
+
+        }
+        
+        li{
+            padding: 5px 10px;
+
+            a{
+                color: $tertiary-color;
+                transition: all 0.4s ease;
+            }
+    
+            a:hover{
+                transform: scale(.95);
+                color: $primary-color;
+                cursor: pointer;
+               
+            }
+        }
+
+        li:hover{
+            transform: scale(.95);
+        }
+
+       
+
+        
+
+    }
+
+
+    .nav-colored{
+        background-color: $tertiary-color;
+        box-shadow: 0 .5px 2px  $secondary-color;
+        position: fixed;
+        width: 100%;
+        top: -70px;
+        left: 0;
+        right: 0;
+        margin-top: 0;
+        transform: translateY(70px);
+        // transition: transform 500ms ease , background-color 500ms ease;
+        
+        
+        h1{
+            a{color: $primary-color;}
+        }
+
+        a{
+            color: $secondary-color;
+        }
+
+        
+
+    }
+
+    .nav-transparent{
+        background-color: transparent;
+        box-shadow: none;
+        margin-top: 2rem;
+        transition: transform 500ms ease , background-color 500ms ease;
+        
+
+        h1{
+            a{color: $primary-color;}
+        }
+
+        a{
+            color: $tertiary-color;
+        }
+
+        
+       
+    }
+
+    
+
+    .showcase-content{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 0 2rem;
+
+        div{
+
+            h1{
+                font-size: 5.5rem;
+                font-weight: bold;
+                color: $tertiary-color;
+                
+            }
+
+            span{
+                color: $primary-color;
+            }
+    
+            p{
+                font-size: 1.5rem;
+                color: $tertiary-color;
+                margin-right: 3rem;
+                padding: 0 6.5rem 2rem 0;
+            }
+            
+            a{
+            
+                font-size: 1.2rem;
+            }
+
+            
+        }
+
+       
+        img{
+
+            max-width: 400px;
+        }
+
+    }
+    
+
+}
+
+.showcase::before{
+    content: '';
+    background: url("/img/clients-bg.jpg") center center/cover no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.set-service-cards{
+
+    background-color: #ffffff;
+
+    .benefit-cards{
+        display: flex;
+        justify-content: space-around;
+        align-content: center;
+        
+    
+    }
+
+}
+
+.works{
+    background-color: $tertiary-color;
+
+    .portfolio{
+        text-align: center;
+
+        h1{
+            font-size: 5rem;
+        }
+    }
+
+    .testimonial{
+        width: 100%;
+        background-color: $tertiary-color;
+        text-align: center;
+
+        .section__title{
+            color: $primary-color;
+        }
+    
+        
+        .testimonial-container{
+            background-color: $primary-color;
+            display: flex;
+            flex-flow: column;
+            justify-content: space-around;
+            
+            img{
+                width: 180px;
+            }
+    
+            .testimonial-content{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+
+                text-align: left;
+            }
+        
+            
+        }
+    }
+    
+    .client-stats{
+       
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        padding: 10rem 0 5rem;
+    
+        .client-stats-content{
+            margin: 2rem 1rem;
+            padding: 3rem 1rem;
+            border: $primary-color 2px solid;
+    
+            h2{
+                font-size: 5rem;
+                font-weight: bolder;
+                color: $primary-color;
+            }
+    
+            p{
+                font-size: 1.5rem;
+            }
+    
+        }
+    
+        
+        
+    }
+}
+
+.teams{
+   
+    position: relative;
+    
+
+    .section__title{
+        padding: 2.5rem 1rem 0;
+        color: $primary-color;
+    }
+    
+    .team{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-items: center;
+        
+        .team-card{
+            width: 300px;
+            background-color: $tertiary-color;
+            color: $secondary-color;
+            border: $primary-color 2px solid;
+		    // box-shadow: 0 0 25px rgba(0, 0, 0, 0.149);
+            border-radius: 5px;
+            margin: 2rem 0;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            position: relative;
+            cursor: pointer;
+        
+            img{
+                align-self: center;
+            }
+
+            .team-bio{
+
+                .team-bio-inner{
+
+                    h3{
+                        text-transform: uppercase;
+                        font-size: 1.7rem;
+                        margin-bottom: 1rem;
+                        color: $primary-color;
+                    }
+
+                    p{
+                        font-size: 12px;
+                        color: $team-text-color;
+                    }
+
+                    ul{
+                        
+                        display: flex;
+                        list-style: none;
+                        padding: 1rem;
+    
+                        li{
+                            padding: .5rem;
+
+                        }
+                    }
+    
+                    svg{
+                        g{
+                            path{
+    
+                                fill: $team-fill-color;
+                                transition: all .4s ease;
+                            }
+
+                        }
+
+                        width: 1.7rem;
+                        height: 1.7rem;
+                        line-height: 3.8rem;
+                        
+                    }
+
+                    svg:hover{
+                        g{
+                            path{
+                                fill: $primary-color;
+                            }
+                        }
+                    }
+                }
+
+            }
+        
+        }
+    } 
+    
+}
+
+
+.team{
+
+    .team-card{
+
+
+        .team-bio {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: $team-overlay-color;
+            opacity: 0;
+            transition: all .4s ease;
+
+                    
+            .team-bio-inner {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                margin-top: 4rem;
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: center;
+                align-items: center;
+                
+            }
+        }
+
+        .team-bio:hover {
+            opacity: 1;
+        }
+    }
+
+}
+
+.tex-footer{
+    font-size: 1.2rem;
+    background-color: $secondary-color;
+    flex: none;
+    margin: auto 0 0;
+    padding: 7rem 0 5rem;
+    border-radius: 0;
+
+    .sr-only{
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0,0,0,0);
+        border: 0;
+    }
+
+    .tex-container{
+        position: relative;
+        margin-left: 2.7rem;
+        margin-right: 2.7rem;
+        padding-right: 15px;
+        padding-left: 15px;
+
+        .tex-footer-item{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 4rem;
+            font-size: 1.2rem;
+            
+            .tex-footer-list{
+                list-style: none;
+                display: grid;
+                grid-gap: 1rem;
+                gap: 1rem;
+                font-size: 1.2rem;
+
+                .tex-footer-list-item{
+
+                    .tex-footer-list-link{
+                        color: $tertiary-color;
+                        text-decoration: none;
+                        transition: -webkit-text-decoration .4s ease;
+                        transition: text-decoration .4s ease;
+                        transition: text-decoration .4s ease, -webkit-text-decoration .4s ease;
+                    }
+    
+                    .tex-footer-list-link:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        .tex-footer-social{
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            margin: 3rem 0;
+            padding: 0.9rem 0;
+
+            .tex-footer-social-icons{
+                display: flex;
+                align-items: center;
+                font-size: 1.2rem;
+
+                .tex-footer-social-header{
+                    color: $tertiary-color;
+                    margin-right: 2rem;
+                    line-height: 1.5rem;
+                    font-weight: 400;
+                }
+
+                .tex-footer-social-list{
+                    list-style: none;
+
+                    .tex-footer-social-list-item{
+                        display: inline-block;
+                        margin: 0 1rem 0 0;
+
+                        &:last-child{
+                            margin: 0;
+                        }
+
+                        
+                        .tex-footer-social-list-link{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 3rem;
+                            height: 3rem;
+                            color: $primary-color;
+                            background: $team-overlay-color;
+                            text-align: center;
+                            border-radius: 50%;
+                            border: 0;
+                            font-weight: 500;
+            
+                            .tex-icon{
+
+                                svg{
+            
+                                    fill: currentColor;
+                                    -o-object-fit: contain;
+                                    object-fit: contain;
+                                    display: block;
+                                    overflow: visible;
+                                    width: 1.4rem;
+                                    height: 1.4rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .tex-footer-download{
+                justify-content: flex-end;
+                
+            }
+        }
+
+        .tex-footer-copywright{
+            text-align: center;
+            margin: 0;
+            font-size: 1.2rem;
+
+            span{
+                line-height: 2rem;
+                color: $tertiary-color;
+            }
+        }
+    }
+}
+
+
+@import 'utilities';
+@import 'buttons';
+@import 'mobile';
